@@ -1,12 +1,4 @@
-package blog.article;
-
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Properties;
-
-
+import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -16,14 +8,17 @@ import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
-
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.Properties;
 
 // PhantomJS
 
