@@ -1,9 +1,8 @@
-package blog.article4;
+package blog.article;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.time.Instant;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Properties;
 
@@ -26,8 +25,6 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import static java.time.Instant.now;
-
 // PhantomJS
 
 public class Article4 {
@@ -38,7 +35,7 @@ public class Article4 {
 	private static WebDriver driver ;
 
 
-	public static void initPhantomJS(){
+	private static void initPhantomJS(){
 		desiredCaps = new DesiredCapabilities();
 		desiredCaps.setJavascriptEnabled(true);
 		desiredCaps.setCapability("takesScreenshot", false);
@@ -56,7 +53,7 @@ public class Article4 {
 		driver.manage().window().setSize(new Dimension(1920, 1080));
 	}
 
-	public static void sendMail(String text) {
+	private static void sendMail(String text) {
 		String to = "victor.ads75@gmail.com";
 		String from = "victor.ads75@gmail.com";
 		String host = "localhost";//or IP address
