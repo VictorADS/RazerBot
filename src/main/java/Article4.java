@@ -34,7 +34,7 @@ public class Article4 {
 		desiredCaps = new DesiredCapabilities();
 		desiredCaps.setJavascriptEnabled(true);
 		desiredCaps.setCapability("takesScreenshot", false);
-		desiredCaps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "D:\\Work\\GitKraken\\scrapping\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe");
+		desiredCaps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "./bin/phantomjs");
 		desiredCaps.setCapability(PhantomJSDriverService.PHANTOMJS_PAGE_CUSTOMHEADERS_PREFIX + "User-Agent", USER_AGENT);
 
 		ArrayList<String> cliArgsCap = new ArrayList();
@@ -77,8 +77,10 @@ public class Article4 {
 	}
 
 	public static void main(String[] args) throws FailingHttpStatusCodeException, MalformedURLException, IOException, InterruptedException {
-
+		int i = 0;
+		System.out.println("INIT GONNA WORK");
 		while (true) {
+			System.out.println( i++ + " HOURS WORKING");
 			System.setProperty("phantomjs.page.settings.userAgent", USER_AGENT);
 			String baseUrl = "https://zvault.razerzone.com/zSilver";
 			initPhantomJS();
