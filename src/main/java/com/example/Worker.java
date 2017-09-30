@@ -31,31 +31,32 @@ import java.util.Properties;
 public class Worker {
 
     private static String USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36";
-    private static DesiredCapabilities desiredCaps ;
+    private static DesiredCapabilities desiredCaps = null;
     private static WebDriver driver ;
-
+    private static String to = "victor.ads75@gmail.com";
+    private static String from = "victor.ads75@gmail.com";
+    private static String host = "localhost";//or IP address
     private static void initPhantomJS(){
-        desiredCaps = new DesiredCapabilities();
-        desiredCaps.setJavascriptEnabled(true);
-        desiredCaps.setCapability("takesScreenshot", false);
-        desiredCaps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "./bin/phantomjs");
-        desiredCaps.setCapability(PhantomJSDriverService.PHANTOMJS_PAGE_CUSTOMHEADERS_PREFIX + "User-Agent", USER_AGENT);
+        if(desiredCaps == null) {
+            desiredCaps = new DesiredCapabilities();
+            desiredCaps.setJavascriptEnabled(true);
+            desiredCaps.setCapability("takesScreenshot", false);
+            desiredCaps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "./bin/phantomjs");
+            desiredCaps.setCapability(PhantomJSDriverService.PHANTOMJS_PAGE_CUSTOMHEADERS_PREFIX + "User-Agent", USER_AGENT);
 
-        ArrayList<String> cliArgsCap = new ArrayList();
-        cliArgsCap.add("--web-security=false");
-        cliArgsCap.add("--ssl-protocol=any");
-        cliArgsCap.add("--ignore-ssl-errors=true");
-        cliArgsCap.add("--webdriver-loglevel=OFF");
+            ArrayList<String> cliArgsCap = new ArrayList();
+            cliArgsCap.add("--web-security=false");
+            cliArgsCap.add("--ssl-protocol=any");
+            cliArgsCap.add("--ignore-ssl-errors=true");
+            cliArgsCap.add("--webdriver-loglevel=OFF");
 
-        desiredCaps.setCapability(PhantomJSDriverService.PHANTOMJS_CLI_ARGS, cliArgsCap);
+            desiredCaps.setCapability(PhantomJSDriverService.PHANTOMJS_CLI_ARGS, cliArgsCap);
+        }
         driver = new PhantomJSDriver(desiredCaps);
         driver.manage().window().setSize(new Dimension(1920, 1080));
     }
 
     private static void sendMail(String text) {
-        String to = "victor.ads75@gmail.com";
-        String from = "victor.ads75@gmail.com";
-        String host = "localhost";//or IP address
 
         //Get the session object
         Properties properties = System.getProperties();
@@ -130,6 +131,7 @@ public class Worker {
             } else {
                 System.out.println("NO STOCK");
             }
+            driver.quit();
         }catch (Exception ie) {
             System.out.println("Got an error fetchhing data");
         }
