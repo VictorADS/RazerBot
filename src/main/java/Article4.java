@@ -7,6 +7,11 @@ import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -22,13 +27,14 @@ import java.util.Properties;
 
 // PhantomJS
 
+@EnableScheduling
+@Component
 public class Article4 {
 
 
 	private static String USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36";
 	private static DesiredCapabilities desiredCaps ;
 	private static WebDriver driver ;
-
 
 	private static void initPhantomJS(){
 		desiredCaps = new DesiredCapabilities();
@@ -41,7 +47,7 @@ public class Article4 {
 		cliArgsCap.add("--web-security=false");
 		cliArgsCap.add("--ssl-protocol=any");
 		cliArgsCap.add("--ignore-ssl-errors=true");
-		cliArgsCap.add("--webdriver-loglevel=ERROR");
+		cliArgsCap.add("--webdriver-loglevel=OFF");
 
 		desiredCaps.setCapability(PhantomJSDriverService.PHANTOMJS_CLI_ARGS, cliArgsCap);
 		driver = new PhantomJSDriver(desiredCaps);
@@ -75,14 +81,17 @@ public class Article4 {
 			mex.printStackTrace();
 		}
 	}
+	private static int i = 0;
 
-	public static void main(String[] args) throws FailingHttpStatusCodeException, MalformedURLException, IOException, InterruptedException {
-		int i = 0;
-		System.out.println("INIT GONNA WORK");
-		while (true) {
-			System.out.println( i++ + " HOURS WORKING");
+	@Async
+	@Scheduled(initialDelay = 2000, fixedRate = 3600000)
+	public static void work() {
+		try {
+			System.out.println("INIT GONNA WORK\n");
 			System.setProperty("phantomjs.page.settings.userAgent", USER_AGENT);
 			String baseUrl = "https://zvault.razerzone.com/zSilver";
+			System.out.println("\n + " + i++ + " HOURS WORKING\n");
+			System.gc();
 			initPhantomJS();
 			driver.get(baseUrl);
 			WebElement signInButton = driver.findElement(By.id("ssoLogin"));
@@ -109,24 +118,30 @@ public class Article4 {
 			WebElement casqueDiv = driver.findElement(By.xpath("//h4[contains(text(),'Razer Kraken 7.1 V2')]"));
 			casqueDiv.click();
 
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 			WebElement frenchDiv = driver.findElement(By.xpath("//i[@class='zSilverFlag FR']"));
 			System.out.println(frenchDiv.getText());
 			frenchDiv.click();
 
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 
 			WebElement availability = driver.findElement(By.xpath("//div[@class='orderDetailDesc']//p[@class='ng-binding']"));
 			if (!availability.getText().contains("VOUCHERS OUT OF STOCK")) {
 				System.out.println("YOU CAN BUY IT");
 				sendMail("Hello, this is you in a bot trying to reach you at " + Instant.now());
-				return;
 			} else {
 				System.out.println("NO STOCK");
 			}
-
-			Thread.sleep(3600 * 1000);
+		}catch (Exception ie) {
+			System.out.println("Got an error fetchhing data");
 		}
 	}
 
+	public static void main(String[] args) {
+		try {
+			new AnnotationConfigApplicationContext(Article4.class);
+		} catch (Exception e){
+			e.printStackTrace();
+		}
+	}
 }
