@@ -12,6 +12,11 @@
     </parent>
     
   <dependencies>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-beans</artifactId>
+          <version>3.2.2.RELEASE</version>
+      </dependency>
   	<dependency>
   		<groupId>net.sourceforge.htmlunit</groupId>
   		<artifactId>htmlunit</artifactId>
