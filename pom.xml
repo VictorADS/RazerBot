@@ -67,7 +67,7 @@
                     <assembleDirectory>target</assembleDirectory>
                     <programs>
                         <program>
-                            <mainClass>Article4</mainClass>
+                            <mainClass>com.example.Article4</mainClass>
                             <name>worker</name>
                         </program>
                     </programs>
