@@ -40,13 +40,13 @@
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
-        <version>2.53.1</version>
+        <version>3.6.0</version>
     </dependency>
 
     <dependency>
-        <groupId>com.github.detro</groupId>
+        <groupId>com.codeborne</groupId>
         <artifactId>phantomjsdriver</artifactId>
-        <version>1.2.0</version>
+        <version>1.4.3</version>
     </dependency>
 
     <dependency>
