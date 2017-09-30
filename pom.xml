@@ -14,8 +14,8 @@
   <dependencies>
       <dependency>
           <groupId>org.springframework</groupId>
-          <artifactId>spring-beans</artifactId>
-          <version>3.2.2.RELEASE</version>
+          <artifactId>spring-core</artifactId>
+          <version>5.0.0.RELEASE</version>
       </dependency>
   	<dependency>
   		<groupId>net.sourceforge.htmlunit</groupId>
@@ -44,12 +44,6 @@
           <artifactId>mail</artifactId>
           <version>1.5.0-b01</version>
       </dependency>
-      <dependency>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-context</artifactId>
-          <version>4.3.8.RELEASE</version>
-      </dependency>
-
           <dependency>
               <groupId>org.springframework.boot</groupId>
               <artifactId>spring-boot-starter-web</artifactId>
