@@ -1,5 +1,7 @@
 package com.example;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -29,7 +31,7 @@ import java.util.Properties;
  */
 @Component
 public class Worker {
-
+    private static final Logger log = LogManager.getRootLogger();
     private static String USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36";
     private static DesiredCapabilities desiredCaps = null;
     private static WebDriver driver ;
@@ -37,11 +39,12 @@ public class Worker {
     private static String from = "victor.ads75@gmail.com";
     private static String host = "localhost";//or IP address
     private static void initPhantomJS(){
+        log.error("Testing");
         if(desiredCaps == null) {
             desiredCaps = new DesiredCapabilities();
             desiredCaps.setJavascriptEnabled(true);
             desiredCaps.setCapability("takesScreenshot", false);
-            desiredCaps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "./bin/phantomjs");
+            desiredCaps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "bin/phantomjs");
             desiredCaps.setCapability(PhantomJSDriverService.PHANTOMJS_PAGE_CUSTOMHEADERS_PREFIX + "User-Agent", USER_AGENT);
 
             ArrayList<String> cliArgsCap = new ArrayList();
@@ -53,6 +56,7 @@ public class Worker {
             desiredCaps.setCapability(PhantomJSDriverService.PHANTOMJS_CLI_ARGS, cliArgsCap);
         }
         driver = new PhantomJSDriver(desiredCaps);
+        log.error("Finisehd init PHANTOMJS");
         driver.manage().window().setSize(new Dimension(1920, 1080));
     }
 
@@ -74,7 +78,7 @@ public class Worker {
             Transport t = session.getTransport("smtps");
             t.connect("smtp.gmail.com", from, "Shutting123");
             t.sendMessage(message, message.getAllRecipients());
-            System.out.println("message sent successfully....");
+            log.error("message sent successfully....");
 
         }catch (MessagingException mex) {
             mex.printStackTrace();
@@ -86,10 +90,10 @@ public class Worker {
     @Scheduled(initialDelay = 2000, fixedRate = 3600000)
     public static void work() {
         try {
-            System.out.println("INIT GONNA WORK\n");
+            log.error("INIT GONNA WORK\n");
             System.setProperty("phantomjs.page.settings.userAgent", USER_AGENT);
             String baseUrl = "https://zvault.razerzone.com/zSilver";
-            System.out.println("\n + " + i++ + " HOURS WORKING\n");
+            log.error("\n + " + i++ + " HOURS WORKING\n");
             System.gc();
             initPhantomJS();
             driver.get(baseUrl);
@@ -120,7 +124,7 @@ public class Worker {
 
             // On affiche les rewards
             WebElement catMouseDiv = driver.findElement(By.xpath("//button[@class='cat-mouse']"));
-            System.out.println(catMouseDiv.getText());
+            log.error(catMouseDiv.getText());
             catMouseDiv.click();
             Thread.sleep(5000);
 
@@ -129,21 +133,21 @@ public class Worker {
 
             Thread.sleep(5000);
             WebElement frenchDiv = driver.findElement(By.xpath("//i[@class='zSilverFlag FR']"));
-            System.out.println(frenchDiv.getText());
+            log.error(frenchDiv.getText());
             frenchDiv.click();
 
             Thread.sleep(5000);
 
             WebElement availability = driver.findElement(By.xpath("//div[@class='orderDetailDesc']//p[@class='ng-binding']"));
             if (!availability.getText().contains("VOUCHERS OUT OF STOCK")) {
-                System.out.println("YOU CAN BUY IT");
+                log.error("YOU CAN BUY IT");
                 sendMail("Hello, this is you in a bot trying to reach you at " + Instant.now());
             } else {
-                System.out.println("NO STOCK");
+                log.error("NO STOCK");
             }
             driver.quit();
         }catch (Exception ie) {
-            System.out.println("Got an error fetchhing data");
+            log.error("Got an error fetchhing data " + ie.getLocalizedMessage());
         }
     }
 
