@@ -97,6 +97,7 @@ public class Worker {
             System.gc();
             initPhantomJS();
             driver.get(baseUrl);
+            log.error("\n\n\n\n\n\n\n\n\n" + driver.getPageSource()+" \n\n\n\n\n\n\n\n\n");
             WebElement signInButton = driver.findElement(By.id("ssoLogin"));
             signInButton.click();
 

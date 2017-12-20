@@ -2,16 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="490a3fed-a6e0-4572-88d7-44785b8201db" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_8_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_8_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_jcl_2_8_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_slf4j_impl_2_8_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/res/log4j2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/example/Worker.class" afterPath="$PROJECT_DIR$/target/classes/com/example/Worker.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog.iml" afterPath="$PROJECT_DIR$/blog.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/Article4.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/Article4.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/Worker.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/Worker.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,51 +15,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Worker.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Worker.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Worker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="149" column="21" lean-forward="false" selection-start-line="149" selection-start-column="21" selection-end-line="149" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-255">
-              <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="log4j2.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/log4j2.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PhantomJSDriverService.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/phantomjsdriver/1.4.3/phantomjsdriver-1.4.3.jar!/org/openqa/selenium/phantomjs/PhantomJSDriverService.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Article4.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Article4.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+            <state relative-caret-position="268">
+              <caret line="99" column="45" lean-forward="false" selection-start-line="99" selection-start-column="45" selection-end-line="99" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -119,8 +69,8 @@
         <option value="$PROJECT_DIR$/../springboot-taskscheduler/src/main/java/com/javainuse/taskconfig/SpringBootHelloWorldApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/Article4.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/Worker.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/Article4.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/Worker.java" />
       </list>
     </option>
   </component>
@@ -602,12 +552,12 @@
       <workItem from="1506774082032" duration="316000" />
       <workItem from="1507584631832" duration="31000" />
       <workItem from="1508068149619" duration="15000" />
-      <workItem from="1513812460124" duration="1589000" />
+      <workItem from="1513812460124" duration="1773000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18631000" />
+    <option name="totallyTimeSpent" value="18815000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="0" />
@@ -659,16 +609,16 @@
   <component name="editorHistoryManager">
     <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/phantomjsdriver/1.4.3/phantomjsdriver-1.4.3.jar!/org/openqa/selenium/phantomjs/PhantomJSDriverService.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="-731">
           <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Article4.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state relative-caret-position="221">
+          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -681,18 +631,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Worker.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="149" column="21" lean-forward="false" selection-start-line="149" selection-start-column="21" selection-end-line="149" selection-end-column="21" />
+        <state relative-caret-position="-255">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Article4.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Worker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        <state relative-caret-position="268">
+          <caret line="99" column="45" lean-forward="false" selection-start-line="99" selection-start-column="45" selection-end-line="99" selection-end-column="45" />
           <folding />
         </state>
       </provider>
