@@ -107,15 +107,25 @@ public class Worker {
 
             WebElement pass = driver.findElement(By.id("loginStep3_password"));
             pass.clear();
-            pass.sendKeys("shutting123");
+            pass.sendKeys("Shutting123");
 
-            WebElement form = driver.findElement(By.xpath("//div[@class='fx-330']/button[@type='submit']"));
+            WebElement form = driver.findElement(By.xpath("//div[@class='fx-280']/button[@type='submit']"));
             form.click();
             // We wait for the ajax call to fire and to load the response into the page
             Thread.sleep(10000);
 
-            WebElement casqueDiv = driver.findElement(By.xpath("//h4[contains(text(),'Razer Kraken 7.1 V2')]"));
-            casqueDiv.click();
+            // acceder a la page des rewards
+            driver.get("https://zvault.razerzone.com/zSilver#zSilverItem");
+            Thread.sleep(5000);
+
+            // On affiche les rewards
+            WebElement catMouseDiv = driver.findElement(By.xpath("//button[@class='cat-mouse']"));
+            System.out.println(catMouseDiv.getText());
+            catMouseDiv.click();
+            Thread.sleep(5000);
+
+            WebElement sourisDiv = driver.findElement(By.xpath("//h4[contains(text(),'Razer Lancehead Tournament Edition')]"));
+            sourisDiv.click();
 
             Thread.sleep(5000);
             WebElement frenchDiv = driver.findElement(By.xpath("//i[@class='zSilverFlag FR']"));
