@@ -97,12 +97,12 @@ public class Worker {
             System.gc();
             initPhantomJS();
             driver.get(baseUrl);
-            Thread.sleep(8000);
+            WebDriverWait wait = new WebDriverWait(driver, 30);
             log.error("\n\n\n\n\n\n\n\n\n" + driver.getPageSource()+" \n\n\n\n\n\n\n\n\n");
             WebElement signInButton = driver.findElement(By.id("ssoLogin"));
             signInButton.click();
 
-            WebDriverWait wait = new WebDriverWait(driver, 30);
+             wait = new WebDriverWait(driver, 30);
             // We wait for the ajax call to fire and to load the response into the page
             Thread.sleep(800);
             WebElement email = driver.findElement(By.id("loginStep3_razerId"));
