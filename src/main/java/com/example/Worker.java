@@ -102,6 +102,7 @@ public class Worker {
             WebDriverWait wait = new WebDriverWait(driver,20);
             wait.until(new Function<WebDriver, WebElement>() {
                 public WebElement apply(WebDriver driver) {
+                    log.error("BITCHES " + driver.getPageSource());
                     return driver.findElement(By.id("foo"));
                 }
             });
