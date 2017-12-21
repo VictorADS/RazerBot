@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -97,7 +98,8 @@ public class Worker {
             System.gc();
             initPhantomJS();
             driver.get(baseUrl);
-            WebDriverWait wait = new WebDriverWait(driver, 30);
+            WebDriverWait wait = new WebDriverWait(driver,20);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ssoLogin")));
             log.error("\n\n\n\n\n\n\n\n\n" + driver.getPageSource()+" \n\n\n\n\n\n\n\n\n");
             WebElement signInButton = driver.findElement(By.id("ssoLogin"));
             signInButton.click();
