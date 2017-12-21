@@ -34,7 +34,7 @@ import java.util.Properties;
 @Component
 public class Worker {
     private static final Logger log = LogManager.getRootLogger();
-    private static String USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36";
+    private static String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36";
     private static DesiredCapabilities desiredCaps = null;
     private static WebDriver driver ;
     private static String to = "victor.ads75@gmail.com";
