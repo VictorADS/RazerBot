@@ -1,5 +1,6 @@
 package com.example;
 
+import com.google.common.base.Function;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -99,7 +100,11 @@ public class Worker {
             initPhantomJS();
             driver.get(baseUrl);
             WebDriverWait wait = new WebDriverWait(driver,20);
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ssoLogin")));
+            wait.until(new Function<WebDriver, WebElement>() {
+                public WebElement apply(WebDriver driver) {
+                    return driver.findElement(By.id("foo"));
+                }
+            });
             log.error("\n\n\n\n\n\n\n\n\n" + driver.getPageSource()+" \n\n\n\n\n\n\n\n\n");
             WebElement signInButton = driver.findElement(By.id("ssoLogin"));
             signInButton.click();
